@@ -9,7 +9,7 @@ Yelee: "3.5"
 menu:
   主页: /
   所有文章: /archives/
-  #随笔: /tags/随笔
+  随笔: /tags/随笔
   标签云: /tags/
   关于我: /about/
 
@@ -50,7 +50,7 @@ subnav:
   #简书: "jianshu"
   #SegmentFault: ""
   #博客园: "cnblogs"
-  #CSDN: ""
+  CSDN: "http://blog.csdn.net/willmax_007"
   #Coding: ""
   #网易云音乐: "netease"
   #虾米音乐: "xiami"
@@ -58,6 +58,7 @@ subnav:
   #AcFun: ""
   #niconico: ""
   #Quora: ""
+  
   #Facebook: "#"
   #Google: "#"
   #Twitter: "#"
@@ -151,7 +152,7 @@ list_style: 0  # value: 0 - 12 可选
 left_col_width: 300
 
 # Copyright info. of post | 文末版权信息
-copyright: false
+copyright: true
 
 # Table of contents | 文章目录
 toc:
@@ -187,7 +188,7 @@ friends:
 #friends: false
 
 #是否开启“关于我”。
-aboutme: Be a graceful coder.
+aboutme: true
 #aboutme: false
 
 # Open link in a new tab | 是否在新窗口打开链接
@@ -219,7 +220,7 @@ ie_updater:
 
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
-  on: false
+  on: true
   left_tab_title: '(つェ⊂) 我藏好了哦~ '
   return_tab_title: '(*´∇｀*) 被你发现啦~ '
 
@@ -241,7 +242,7 @@ fancybox: true
 
 # Display Math(LaTeX, MathML...) | 数学公式支持
 ## https://www.mathjax.org/
-mathjax: false
+mathjax: true
 
 # Socail Share | 是否开启分享
 share: 
