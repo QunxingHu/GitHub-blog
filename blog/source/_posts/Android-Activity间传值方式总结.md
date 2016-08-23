@@ -1,10 +1,10 @@
 ---
 title: Android Activity间传值方式总结
 date: 2016-08-18 15:14:34
-tags: Android
+tags: 
+  - Android
+  - Activity
 ---
----
-
 
 #### 1. 使用Bundle,extra 传送简单的类型
 数据发送端：
@@ -15,6 +15,7 @@ bundle.putDouble("height", heightNum);
 intent.putExtras(bundle);
 startActivity(intent);
 ```
+<!-- more -->
 数据接收端：
 ```java
 Bundle bundle = this.getIntent().getExtras();

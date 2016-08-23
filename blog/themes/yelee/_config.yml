@@ -22,7 +22,7 @@ favicon: /img/monkey.png
 # Internationalization | 主题语言
 ## Change Language in SITE's _config.yml | 在站点配置中切换语言
 ## https://hexo.io/docs/internationalization.html
-Available Languages: en, zh-Hans, zh-Hant-TW, zh-Hant-HK
+##Available Languages: en, zh-Hans, zh-Hant-TW, zh-Hant-HK
 
 # Subdirectory | 子目录
 ## If your site' url is 'http://yoursite.com/blog', set root_url as '/blog/'
@@ -143,7 +143,7 @@ blockquote_style:
 
 # Headings Style | 标题风格
 ## 0-Yelee, 1-Yilia, 2-GitHub
-heading_style: 0 # Value: 0 - 2
+heading_style: 1 # Value: 0 - 2
 
 ## List style type (ul) | 无序列表项标记样式
 list_style: 0  # value: 0 - 12 可选
@@ -158,8 +158,8 @@ copyright: true
 toc:
   on: true
   list_number: true # 目录序号
-  max_depth: 3  # 1 - 6 (h1-h6) 目录最大级数
-  nowrap: false # Keep title on same line | 目录标题不换行
+  max_depth: 4  # 1 - 6 (h1-h6) 目录最大级数
+  nowrap: true # Keep title on same line | 目录标题不换行
 
 # 是否开启主页及加载头像时的动画效果
 # Animation in Homepage and Loading avatar
@@ -188,7 +188,7 @@ friends:
 #friends: false
 
 #是否开启“关于我”。
-aboutme: true
+aboutme: Be a graceful coder.
 #aboutme: false
 
 # Open link in a new tab | 是否在新窗口打开链接
@@ -231,9 +231,9 @@ tab_title_change:
 ## Insatall below plugin to take effect | 使用搜索需先安装对应插件
 ## https://github.com/PaicHyperionDev/hexo-generator-search
 search: 
-  #on: true
+  on: true
   onload: false
-  ## true: get search.xml file when the page has loaded
+  ## true: get search.xml file when the pagleft_tab_titlee has loaded
   ## false: get the file when search box gets focus
 
 # images viewer | 图片浏览器

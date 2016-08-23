@@ -1,8 +1,9 @@
 ---
-title: 利用Hexo 搭建 github 博客
-tags: Hexo
+title: 利用hexo + git 搭建博客
+tags: 
+    - hexo
+    - git
 ---
-
 ### 搭建博客步骤
 #### 环境配置
 1. 下载安装 [git][1]
@@ -10,9 +11,10 @@ tags: Hexo
 > - git config -- global user.name "xxx"
 > - git config -- global user.email "xxx"
 > - 在github上添加新分支为名为 username.githup.io
->
->  **说明：**
+<!-- more -->
+**说明：**
 > 已经添加SSHkey 的不必重复添加，git config -global选项可以不用（可以单独为某个文件夹指定配置，”xxx“,username替换为自己的用户名和邮箱）
+
 #### 2. 下载安装 [nodejs][2]
 #### 3. 下载安装 [Hexo][3]
 > 在命令行输入npm install hexo-cli -g
@@ -20,6 +22,8 @@ tags: Hexo
 #### 创建博客
 1.  新建文件夹 githublog/blog (新建两层目录是为了将blog文件更方便的保存到git )
 2. hexo init blog
+3. cd blog
+4. npm install
 3. hexo generate (可简写为hexo g)
 4. hexo server (启动本地服务，进入 http://localhost:4000 预览)
 5. 修改 blog 目录下的配置文件 `_config.yml`

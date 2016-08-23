@@ -2,16 +2,16 @@
 menu:
   主页: /
   所有文章: /archives
-  # 随笔: /tags/随笔
+  随笔: /tags/随笔
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  github: "https://github.com/QunxingHu"
+  weibo: "http://weibo.com/u/2812995502"
+  #rss: "#"
+  #zhihu: "#"
   #douban: "#"
-  #mail: "#"
+  mail: "mailto:zhihuqunxing@163.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -40,7 +40,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar:
+avatar: /img/lufei.jpg
 #是否开启分享
 share_jia: true
 share_addthis: false
@@ -55,15 +55,14 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  奥巴马的博客: http://localhost:4000/
-  卡卡的美丽传说: http://localhost:4000/
-  本泽马的博客: http://localhost:4000/
-  吉格斯的博客: http://localhost:4000/
-  习大大大不同: http://localhost:4000/
-  托蒂的博客: http://localhost:4000/
+  CSDN: http://blog.csdn.net/willmax_007
+  #卡卡的美丽传说: http://localhost:4000/
+  #本泽马的博客: http://localhost:4000/
+  #吉格斯的博客: http://localhost:4000/
+  
 
 #是否开启“关于我”。
 #不开启——
 #aboutme: false
 #开启——
-aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+aboutme: Love coding & Love Life

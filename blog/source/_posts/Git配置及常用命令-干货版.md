@@ -2,11 +2,13 @@
 title: Git配置及常用命令--干货版
 date: 2016-08-19 23:32:07
 tags:
+	- git
 ---
 ### Git安装与配置
 #### Linux下安装与配置
 1.  通过命令行 `sudo apt-get install git` 进行安装
 2.  配置 `git config --global user.name "xxx"`, `git config --global user.email "xxx@xxx.com"` (global 选项可选)
+<!-- more -->
 3.  使用 git push到github时，需要在github上添加本机的SSH key
 >  - 生成SSH Key： `ssh-keygen -t rsa -C "xxx@xxx.com"`  (按三个回车即可，一般不使用密码)
 > -  生成的key在 `～/.ssh` 目录下，该目录下包含两个文件:  `id_ras`（私钥）， `id_rsa.pub`（公钥）
