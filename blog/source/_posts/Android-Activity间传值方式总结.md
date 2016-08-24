@@ -1,6 +1,8 @@
 ---
 title: Android Activity间传值方式总结
 date: 2016-08-18 15:14:34
+categories:
+	- 术业专攻
 tags: 
   - Android
   - Activity

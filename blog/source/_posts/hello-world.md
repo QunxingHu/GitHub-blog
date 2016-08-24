@@ -1,5 +1,7 @@
 ---
 title: 利用hexo + git 搭建博客
+categories:
+	- 术业专攻
 tags: 
     - hexo
     - git

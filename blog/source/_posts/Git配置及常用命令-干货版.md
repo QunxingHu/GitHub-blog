@@ -1,6 +1,8 @@
 ---
 title: Git配置及常用命令--干货版
 date: 2016-08-19 23:32:07
+categories: 
+	- 术业专攻
 tags:
 	- git
 ---
