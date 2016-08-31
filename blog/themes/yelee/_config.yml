@@ -182,9 +182,9 @@ tagcloud: true
 
 # Blogroll, Link exchange | 友情链接
 friends:
-  Hexo: https://hexo.io
-  GitHub: https://pages.github.com/
-  MOxFIVE: http://moxfive.xyz/
+  Harvey: https://harveyhub.github.io
+  yangyang: https://github.com/yangyang804773699
+  特码斯: https://github.com/ch710798472
 #friends: false
 
 #是否开启“关于我”。
@@ -221,8 +221,8 @@ ie_updater:
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
   on: true
-  left_tab_title: '(つェ⊂) 我藏好了哦~ '
-  return_tab_title: '(*´∇｀*) 被你发现啦~ '
+  left_tab_title: '(⊃∀⊂)'
+  return_tab_title: '(^∀^)'
 
 
 # >>> Vendors | 第三方工具 & 服务 <<<

@@ -6,6 +6,9 @@ tags:
     - hexo
     - git
 ---
+这篇文章主要记录本人利用hexo搭建github博客的步骤，对于搭建后的博格主题的美化，在主题的readme都有详细阐述，这里不再赘述。另外，附加文章常见的格式。
+
+<!-- more -->
 ### 搭建博客步骤
 #### 环境配置
 1. 下载安装 [git][1]
@@ -13,7 +16,7 @@ tags:
 > - git config -- global user.name "xxx"
 > - git config -- global user.email "xxx"
 > - 在github上添加新分支为名为 username.githup.io
-<!-- more -->
+
 **说明：**
 > 已经添加SSHkey 的不必重复添加，git config -global选项可以不用（可以单独为某个文件夹指定配置，”xxx“,username替换为自己的用户名和邮箱）
 
@@ -64,9 +67,30 @@ hexo deploy #将.deploy目录部署到GitHub
 hexo help # 查看帮助
 hexo version #查看Hexo的版本
 ```
-如有疑问和建议，欢迎指导和提问。
 
+
+## hexo文章模板
+```markdown
+---
+title: 文章名
+date: 时间
+categories:
+	- 文章分类1
+	- 文章分类2
+tags: 
+    - 文章标签1
+    - 文章标签2
+top: 1 		#文章置顶
+---
+
+这里是显示在主页中的文章摘要。
+<!-- more -->
+这是文章正文（主页显示readmore 按钮，点击后可见正文）
+```
+文章分类，与文章标签分类，需主题支持。本人所用的[yelee][4]。
+如有疑问和建议，欢迎指导和提问。
 
   [1]: https://git-scm.com/downloads/
   [2]: https://nodejs.org/en/
   [3]: https://hexo.io/zh-cn/
+  [4]: https://github.com/MOxFIVE/hexo-theme-yelee

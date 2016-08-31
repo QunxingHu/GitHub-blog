@@ -3,6 +3,7 @@ title: 404
 date: 2016-08-18 17:15:23
 permalink: /404
 ---
-# THIS IS MY 404 PAGE!
+# 404 ERROR
+# OH! NO! WHERE IS MY PAGE?
 
-NOT FOUND : 404
+Emmm....There is no gold here, Maybe you can try your luck on other pages!
