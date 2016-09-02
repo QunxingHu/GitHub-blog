@@ -1,5 +1,6 @@
 ---
 title: C++指针详解
+date: 2016-08-28 23:46:36
 categories:
 	- 术业专攻
 tags: 

@@ -1,5 +1,6 @@
 ---
 title: 利用hexo + git 搭建博客
+date: 2016-08-15 23:46:36
 categories:
 	- 术业专攻
 tags: 
