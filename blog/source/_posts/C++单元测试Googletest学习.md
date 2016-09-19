@@ -41,7 +41,7 @@ tags:
 |____Add_test.cpp	 #测试类的实现
 ```
 **main.cpp** 
-```cpp?linenums
+```cpp
 #include "Add_test.h"
 #include "gtest/gtest.h"
 int main(int argc, char **argv)
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 }
 ```
 **Add.h**
-```cpp?linenums
+```cpp
 /**
  * simple class Add declare
  */
@@ -69,7 +69,7 @@ public:
 #endif
 ```
 **Add.cpp**
-```cpp?linenums
+```cpp
 /**
  * simple implement for class Add
  */
@@ -80,7 +80,7 @@ int Add::add(int a, int b){
 }
 ```
 **Add_test.h**
-```cpp?linenums
+```cpp
 /**
  * THIS FILE IS AN DEMO FOR GTEST
  * Declare class Add_test
@@ -112,7 +112,7 @@ public:
 #endif // ADD_TEST_H
 ```
 **Add_test.cpp**
-```cpp?linenums
+```cpp
 /**
  * THIS FILE IS AN DEMO FOR GTEST
  * implement the class Add_test
@@ -195,7 +195,7 @@ EXPECT_\*  :  generate nonfatal failures, which don't abort the current function
 简而言之， ASSERT 检查失败时会退出，EXPECT不会。
 
 我们可以使用`<<`自定义输出错误信息，帮助定位错误。用法如下：
-```cpp?linenums
+```cpp
 ASSERT_EQ(x.size(), y.size()) << "Vectors x and y are of unequal length";
 for (int i = 0; i < x.size(); ++i) {
   EXPECT_EQ(x[i], y[i]) << "Vectors x and y differ at index " << i;
@@ -239,7 +239,7 @@ for (int i = 0; i < x.size(); ++i) {
 |ASSERT_ANY_THROW(statement); 	|EXPECT_ANY_THROW(statement); |	statement throws an exception of any type|
 |ASSERT_NO_THROW(statement); 	|EXPECT_NO_THROW(statement); |	statement doesn't throw any exception|
 示例：
-```cpp?linenums
+```cpp
 int Foo(int a, int b)
 {
     if (a == 0 || b == 0)
@@ -283,7 +283,7 @@ gtest事件一共有三种：
 要实现全局事件，必须写一个类，继承`testing::Environment`类，实现里面的`SetUp`和`TearDown`方法。
 - SetUp()方法在所有案例执行前执行
 - TearDown()方法在所有案例执行后执行
-```cpp?linenums
+```cpp
 class FooEnvironment : public testing::Environment
 {
 public:
@@ -299,7 +299,7 @@ public:
 };
 ```
 当然，这样还不够，我们还需要告诉gtest添加这个全局事件，我们需要在main函数中通过testing::AddGlobalTestEnvironment方法将事件挂进来，也就是说，我们可以写很多个这样的类，然后将他们的事件都挂上去。
-```cpp?linenums
+```cpp
 int main(int argc, char** argv[])
 {
     testing::AddGlobalTestEnvironment(new FooEnvironment);
@@ -311,7 +311,7 @@ int main(int argc, char** argv[])
 我们需要写一个类，继承`testing::Test`，然后实现两个静态方法`SetUpTestCase()`,`TearDownTestCase()`
 -  SetUpTestCase() 方法在第一个TestCase之前执行
 - TearDownTestCase() 方法在最后一个TestCase之后执行
-```cpp?linenums
+```cpp
 class FooTest : public testing::Test {
  protected:
   static void SetUpTestCase() {
@@ -326,7 +326,7 @@ class FooTest : public testing::Test {
 };
 ```
 在编写测试案例时，我们需要使用`TEST_F`这个宏，**第一个参数必须是我们上面类的名字，代表一个TestSuite**。
-```cpp?linenums
+```cpp
 TEST_F(FooTest, Test1){
     // you can refer to shared_resource here 
 }
@@ -338,7 +338,7 @@ TEST_F(FooTest, Test2){
 TestCase事件是挂在每个案例执行前后的，实现方式和上面的几乎一样，不过需要实现的是`SetUp`方法和`TearDown`方法
 - SetUp()方法在每个TestCase之前执行
 - TearDown()方法在每个TestCase之后执行
-```cpp?linenums
+```cpp
 class FooCalcTest:public testing::Test
 {
 protected:
@@ -365,7 +365,7 @@ TEST_F(FooCalcTest, HandleNoneZeroInput_Error)
 gtest提供的这三种事件机制还是非常的简单和灵活的。同时，通过继承Test类，使用TEST_F宏，我们可以在案例之间共享一些通用方法，共享资源。使得我们的案例更加的简洁，清晰。
 ## 参数化测试
 假设我们需要传入一系列数值让函数IsPrime去判断是否为True，使用之前的测试方案，写法如下：
-```cpp?linenums
+```cpp
 TEST(IsPrimeTest, HandleTrueReturn)
 {
     EXPECT_TRUE(IsPrime(3));
@@ -377,14 +377,14 @@ TEST(IsPrimeTest, HandleTrueReturn)
 ```
 使用参数化测试方案，写法如下：
 1. 添加一个类，继承`testting::TestWithParam<T>`,其中`T`就是你需要参数化的参数类型，比如判定素数，我需要参数化一个`int`型的参数。
-```cpp?linenums
+```cpp
 class IsPrimeParamTest : public::testing::TestWithParam<int>
 {
 
 };
 ```
 2. 使用宏`TEST_P`，并在`TEST_P`宏中，使用`GetParam`获取当前的参数的具体值。
-```cpp?linenums
+```cpp
 TEST_P(IsPrimeParamTest, HandleTrueReturn)
 {
     int n =  GetParam();
@@ -392,7 +392,7 @@ TEST_P(IsPrimeParamTest, HandleTrueReturn)
 }
 ```
 3. 使用`INSTANTIATE_TEST_CASE_P`设置参数范围
-```cpp?linenums
+```cpp
 INSTANTIATE_TEST_CASE_P(TrueReturn, IsPrimeParamTest, testing::Values(3, 5, 11, 23, 17));
 ```
 		参数说明：
@@ -410,7 +410,7 @@ INSTANTIATE_TEST_CASE_P(TrueReturn, IsPrimeParamTest, testing::Values(3, 5, 11, 
 ### 类型参数化
 gtest还提供了应付各种不同类型的数据时的方案，以及参数化类型的方案。
 1. 首先定义一个模板类，继承`testing::Test`
-```cpp?linenums
+```cpp
 template <typename T>
 class FooTest : public testing::Test {
  public:
@@ -420,12 +420,12 @@ class FooTest : public testing::Test {
 };
 ```
 2. 定义需要测试的具体数据类型（如char， int，unsigned int）
-```cpp?linenums
+```cpp
 typedef testing::Types<char, int, unsigned int> MyTypes;
 TYPED_TEST_CASE(FooTest, MyTypes);
 ```
 3. 使用宏`TYPED_TEST`完成测试案例，在声明模版的数据类型时，使用TypeParam 
-```cpp?linenums
+```cpp
 TYPED_TEST(FooTest, DoesBlah) {
   // Inside a test, refer to the special name TypeParam to get the type
   // parameter.  Since we are inside a derived class template, C++ requires
@@ -444,7 +444,7 @@ TYPED_TEST(FooTest, DoesBlah) {
 }
 ```
 上面的例子看上去也像是类型的参数化，但是还不够灵活，因为需要事先知道类型的列表。gtest还提供一种更加灵活的类型参数化的方式，允许你在完成测试的逻辑代码之后再去考虑需要参数化的类型列表，并且还可以重复的使用这个类型列表。下面也是官方的例子：
-```cpp?linenums
+```cpp
 template <typename T>
 class FooTest : public testing::Test {
   
@@ -453,7 +453,7 @@ class FooTest : public testing::Test {
 TYPED_TEST_CASE_P(FooTest);
 ```
 接着，使用宏`TYPED_TEST_P`完成测试案例
-```cpp?linenums
+```cpp
 TYPED_TEST_P(FooTest, DoesBlah) {
   // Inside a test, refer to TypeParam to get the type parameter.
   TypeParam n = 0;
@@ -463,11 +463,11 @@ TYPED_TEST_P(FooTest, DoesBlah) {
 TYPED_TEST_P(FooTest, HasPropertyA) {  }
 ```
 接着，我们需要我们上面的案例，使用`REGISTER_TYPED_TEST_CASE_P`宏，第一个参数是testcase的名称，后面的参数是test的名称
-```cpp?linenums
+```cpp
 REGISTER_TYPED_TEST_CASE_P(FooTest, DoesBlah, HasPropertyA);
 ```
 接着指定需要的类型列表：
-```cpp?linenums
+```cpp
 typedef testing::Types<char, int, unsigned int> MyTypes;
 INSTANTIATE_TYPED_TEST_CASE_P(My, FooTest, MyTypes);
 ```
@@ -487,7 +487,7 @@ INSTANTIATE_TYPED_TEST_CASE_P(My, FooTest, MyTypes);
 statement: 被测试的代码语句
 regex: 正则表达式，用于匹配异常时在stderr中输出的内容
 示例：
-```cpp?linenums
+```cpp
 void Foo()
 {
     int *pInt = 0;
@@ -503,14 +503,14 @@ TEST(FooDeathTest, Demo)
 ### 宏 `*_EXIT(statement, predicate, regex)`
 statement: 被测试的代码语句
 **predicate:** 在这里必须是一个委托，接收int型参数，并返回bool。只有当返回值为true时，死亡测试案例才算通过。gtest提供了一些常用的predicate：
-```cpp?linenums
+```cpp
 testing::ExitedWithCode(exit_code); //如果程序正常退出并且退出码与exit_code相同则返回 true
 testing::KilledBySignal(signal_number);  //Windows下不支持,如果程序被signal_number信号kill的话就返回true
 ```
 regex: 是一个正则表达式，用来匹配异常时在stderr中输出的内容
 这里， 要说明的是，`*_DEATH`其实是对`*_EXIT`进行的一次包装，`*_DEATH`的predicate判断进程是否以非0退出码退出或被一个信号杀死。
 示例：
-```cpp?linenums
+```cpp
 TEST(ExitDeathTest, Demo)
 {
     EXPECT_EXIT(_exit(1),  testing::ExitedWithCode(1),  "");
@@ -518,7 +518,7 @@ TEST(ExitDeathTest, Demo)
 ```
 ### 宏 `*_DEBUG_DEATH(statement, regex)`
 gtest中关于DEBUG_DEATH的定义
-```cpp?linenums
+```cpp
 #ifdef NDEBUG
 #define EXPECT_DEBUG_DEATH(statement, regex) \
   do { statement; } while (false)
@@ -537,7 +537,7 @@ gtest中关于DEBUG_DEATH的定义
 #endif  // NDEBG for EXPECT_DEBUG_DEATH
 ```
 可以看到，在Debug版和Release版本下， *_DEBUG_DEATH的定义不一样。因为很多异常只会在Debug版本下抛出，而在Realease版本下不会抛出，所以针对Debug和Release分别做了不同的处理。看gtest里自带的例子就明白了：
-```cpp?linenums
+```cpp
 int DieInDebugElse12(int* sideeffect) {
     if (sideeffect) *sideeffect = 12;
 #ifndef NDEBUG
@@ -573,15 +573,15 @@ gtest定义两个宏，用来表示当前系统支持哪套正则表达式风格
 
 ### 死亡测试运行方式
 1. fast方式（默认的方式）
-```cpp?linenums
+```cpp
 testing::FLAGS_gtest_death_test_style = "fast";
 ```
 2. threadsafe方式
-```cpp?linenums
+```cpp
 testing::FLAGS_gtest_death_test_style = "threadsafe";
 ```
 你可以在 main() 里为所有的死亡测试设置测试形式，也可以为某次测试单独设置。Google Test会在每次测试之前保存这个标记并在测试完成后恢复，所以你不需要去管这部分工作 。
-```cpp?linenums
+```cpp
 TEST(MyDeathTest, TestOne) {
   testing::FLAGS_gtest_death_test_style = "threadsafe";
   // This test is run in the "threadsafe" style:
@@ -611,7 +611,7 @@ int main(int argc, char** argv) {
 3. 系统环境变量
 优先级：命令行参数 > 代码中flag > 系统环境变量
 
-```cpp?linenums
+```cpp
 int main(int argc, char* argv[])
 {
     testing::GTEST_FLAG(output) = "xml:";	//代码中设置FLAG，指定输出xml
