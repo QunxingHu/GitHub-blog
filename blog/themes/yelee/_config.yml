@@ -106,7 +106,7 @@ duoshuo:
 
 youyan:
   #on: true
-  id: 
+  id: 2114360
   # 是否开启友言评论，http://www.uyan.cc/index.php
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
   # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
@@ -188,7 +188,7 @@ friends:
 #friends: false
 
 #是否开启“关于我”。
-aboutme: Be a graceful coder.
+aboutme: "Hello, World!"
 #aboutme: false
 
 # Open link in a new tab | 是否在新窗口打开链接
@@ -221,8 +221,8 @@ ie_updater:
 # Tab Title Change | 标签页标题切换
 tab_title_change: 
   on: true
-  left_tab_title: '(⊃∀⊂)'
-  return_tab_title: '(^∀^)'
+  left_tab_title: '(⊃∀⊂) 你看不见看不见我'
+  return_tab_title: '(^∀^) 被你发现了'
 
 
 # >>> Vendors | 第三方工具 & 服务 <<<
@@ -242,7 +242,7 @@ fancybox: true
 
 # Display Math(LaTeX, MathML...) | 数学公式支持
 ## https://www.mathjax.org/
-mathjax: true
+mathjax: false
 
 # Socail Share | 是否开启分享
 share: 
