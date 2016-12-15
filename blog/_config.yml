@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: QunxingHu's blog
-subtitle:
-description:
-author: QunxingHu
+title: Quincy's Blog
+subtitle: coder...
+description: Coding the world.
+author: Quincy
 language:
 timezone:
 
@@ -63,7 +63,54 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yelee
+theme: indigo
+
+#search
+#search:
+#  path: search.xml
+#  field: post
+
+# hexo-generartor-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: 0
+
+#generator-json-content
+jsonContent:
+  meta: true
+  keywords: false # language name option
+  dateFormat: undefined # format string
+  pages:
+    title: true
+    slug: true
+    date: true
+    updated: true
+    comments: true
+    path: true
+    link: true
+    permalink: true
+    excerpt: true
+    keywords: true # but only if root keywords option language was set
+    text: true
+    raw: false
+    content: false
+  posts:
+    title: true
+    slug: true
+    date: true
+    updated: true
+    comments: true
+    path: true
+    link: true
+    permalink: true
+    excerpt: true
+    keywords: true # but only if root keywords option language was set
+    text: true
+    raw: false
+    content: false
+    categories: true
+    tags: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -71,7 +118,3 @@ deploy:
   type: git
   repository: https://github.com/QunxingHu/qunxinghu.github.io.git
   branch: master
-
-search:
-  path: search.xml
-  field: post
