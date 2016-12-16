@@ -4,7 +4,7 @@
 
 # Site
 title: Quincy's Blog
-subtitle: coder...
+subtitle: Coding the world.
 description: Coding the world.
 author: Quincy
 language:
@@ -66,9 +66,9 @@ pagination_dir: page
 theme: indigo
 
 #search
-#search:
-#  path: search.xml
-#  field: post
+search:
+  path: search.xml
+  field: post
 
 # hexo-generartor-feed
 feed:
@@ -78,38 +78,22 @@ feed:
 
 #generator-json-content
 jsonContent:
-  meta: true
-  keywords: false # language name option
-  dateFormat: undefined # format string
-  pages:
-    title: true
-    slug: true
-    date: true
-    updated: true
-    comments: true
-    path: true
-    link: true
-    permalink: true
-    excerpt: true
-    keywords: true # but only if root keywords option language was set
-    text: true
-    raw: false
-    content: false
+  meta: false
+  pages: false
   posts:
     title: true
-    slug: true
     date: true
-    updated: true
-    comments: true
     path: true
-    link: true
-    permalink: true
-    excerpt: true
-    keywords: true # but only if root keywords option language was set
     text: true
     raw: false
     content: false
-    categories: true
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
     tags: true
 
 # Deployment
