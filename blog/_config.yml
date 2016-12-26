@@ -7,8 +7,8 @@ title: Quincy's Blog
 subtitle: Coding the world.
 description: Coding the world.
 author: Quincy
-language:
-timezone:
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: indigo
+theme: yelee
 
 #search
 search:
@@ -96,9 +96,12 @@ jsonContent:
     categories: false
     tags: true
 
+plugins: hexo-renderer-less
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repository: https://github.com/QunxingHu/qunxinghu.github.io.git
   branch: master
+
