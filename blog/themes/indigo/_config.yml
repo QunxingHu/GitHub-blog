@@ -30,7 +30,7 @@ rss: /atom.xml
 # 你的头像url
 avatar: /img/avatar.jpg
 # favicon
-favicon: /img/Batman.ico
+favicon: /img/Batman_logo.ico
 # 个人介绍页面，如不需要设为false
 aboutme: /about
 # email
