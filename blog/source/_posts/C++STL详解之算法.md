@@ -6,10 +6,10 @@ categories:
 tags: 
 - C++
 ---
-摘要部分
-<!-- more -->
+
 ## 简介
 STL算法部分主要由头文件 `<algorithm>` ,`<numeric>`, `<functional>` 组成。要使用 STL中的算法函数必须包含头文件`<algorithm>`，对于数值算法须包含`<numeric>`，`<functional>`中则定义了一些模板类，用来声明函数对象。
+<!-- more -->
 ## 分类
 STL中算法大致分为四类：
 1. 非可变序列算法：指不直接修改其所操作的容器内容的算法。

@@ -30,8 +30,9 @@ rss: /atom.xml
 # 你的头像url
 avatar: /img/avatar.jpg
 # favicon
-favicon: /favicon.ico
-
+favicon: /img/Batman.ico
+# 个人介绍页面，如不需要设为false
+aboutme: /about
 # email
 email: 1367811357@qq.com
 
@@ -112,7 +113,7 @@ canonical: false
 since_year: 2016
 
 # 用户页面中作者相关的描述性文字，如不需要设为 false
-about: true
+about: false
 
 # “不蒜子”访问量统计，详见 http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:

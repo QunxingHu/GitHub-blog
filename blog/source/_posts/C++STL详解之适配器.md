@@ -6,11 +6,10 @@ categories:
 tags: 
 - C++
 ---
-摘要部分
-<!-- more -->
+
 STL提供了三个容器适配器：`queue` 、`priority_queue`、`stack`。这些适配器都是包装了vector、list、deque中某个顺序容器的包装器。
 注意：**适配器没有提供迭代器，也不能同时插入或删除多个元素**。
-
+<!-- more -->
 ## stack
 stack用法：
 ```cpp
