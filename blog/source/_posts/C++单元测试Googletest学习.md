@@ -18,14 +18,14 @@ tags:
   - `make`
   - 生成`libgtest.a`, `libgmock.a`
  
- ![make][1]
+
 
 3. 编译运行sample，测试
   -  进入`googletest/make`目录
   -  `make .`
   -  运行测试用例：`./sample1_unittest`
    
-   ![make sample][2]
+
 
 ## 编写单元测试用例
 为了方便应用和理解，我按照标准的C++工程目录结构创建了一个简单示例，其中待测试的是`Add.h`中`class Add`的成员函数`add()`，在`Add_test.cpp`利用gtest对`add()`进行测试。对于其中所涉及的知识点，接下来会进行解释。示例源码如下所示：
@@ -186,7 +186,7 @@ main.o: Add_test.h
 clean:
 	rm test $(objects)
 ```
-![gtest示例][3]
+
 
 ## 断言
 gtest中断言相关的宏分为两种：ASSERT，EXCEPT。官方文档解释如下：
@@ -233,11 +233,13 @@ for (int i = 0; i < x.size(); ++i) {
 
 
 ### 异常检查
+
 |**Fatal assertion** 	|**Nonfatal assertion** 	|**Verifies**|
 |:--------------------|:-----------------------|:-------------|
 |ASSERT_THROW(statement, exception_type); 	|EXPECT_THROW(statement, exception_type); 	|statement throws an exception of the given type|
 |ASSERT_ANY_THROW(statement); 	|EXPECT_ANY_THROW(statement); |	statement throws an exception of any type|
 |ASSERT_NO_THROW(statement); 	|EXPECT_NO_THROW(statement); |	statement doesn't throw any exception|
+
 示例：
 ```cpp
 int Foo(int a, int b)
@@ -260,12 +262,14 @@ TEST(FooTest, HandleZeroInput)
 }
 ```
 ### 浮点型检查
+
 | **Fatal assertion** | **Nonfatal assertion** | **Verifies** |
 |:--------------------|:-----------------------|:-------------|
 |ASSERT_FLOAT_EQ(expected, actual); 	|EXPECT_FLOAT_EQ(expected, actual); |	the two float values are almost equal|
 |ASSERT_DOUBLE_EQ(expected, actual); 	|EXPECT_DOUBLE_EQ(expected, actual); |	the two double values are almost equal|
 
 **对相近的两个数比较：**
+
 | **Fatal assertion** | **Nonfatal assertion** | **Verifies** |
 |:--------------------|:-----------------------|:-------------|
 |ASSERT_NEAR(val1, val2, abs_error); 	|EXPECT_NEAR(val1, val2, abs_error); 	|the difference between val1 and val2 doesn't exceed the given absolute error |
@@ -395,10 +399,14 @@ TEST_P(IsPrimeParamTest, HandleTrueReturn)
 ```cpp
 INSTANTIATE_TEST_CASE_P(TrueReturn, IsPrimeParamTest, testing::Values(3, 5, 11, 23, 17));
 ```
-		参数说明：
-		第一个参数是测试案例的前缀，可以任意取。
-		第二个参数是测试案例的名称，需要和之前定义的参数化的类的名称相同，如：IsPrimeParamTest	
-		第三个参数是可以理解为参数生成器，上面的例子使用test::Values表示使用括号内的参数。Google提供了一系列的参数生成的函数：
+
+参数说明:
+
+- 第一个参数是测试案例的前缀，可以任意取。
+- 第二个参数是测试案例的名称，需要和之前定义的参数化的类的名称相同，如：IsPrimeParamTest	
+- 第三个参数是可以理解为参数生成器，上面的例子使用test::Values表示使用括号内的参数。Google提供了一系列的参数生成的函数：
+
+
   | 函数名 | 函数说明 |
   | :--------|:-----------|
   |ange(begin, end[, step]) 	|范围在begin~end之间，步长为step，不包括end
@@ -477,6 +485,7 @@ INSTANTIATE_TYPED_TEST_CASE_P(My, FooTest, MyTypes);
 通常在测试过程中，我们需要考虑各种各样的输入，有的输入可能直接导致程序崩溃，这时我们就需要检查程序是否按照预期的方式挂掉，这也就是所谓的“死亡测试”。gtest的死亡测试能做到在一个安全的环境下执行崩溃的测试案例，同时又对崩溃结果进行验证。
 
 **使用的宏**：
+
 |**Fatal assertion** |	**Nonfatal assertion** |	**Verifies**|
 |:--------------------|:--------------------------|:------------|
 |ASSERT_DEATH(statement, regex); 	|EXPECT_DEATH(statement, regex); 	|statement crashes with the given error|
