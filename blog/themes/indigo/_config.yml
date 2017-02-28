@@ -24,6 +24,9 @@ menu:
   weibo:
     url: http://weibo.com/2812995502
     target: _blank
+  gitbook:
+    url: https://gitbook.huqunxing.site
+    target: _blank
 
 rss: /atom.xml
 
