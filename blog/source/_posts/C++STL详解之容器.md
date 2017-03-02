@@ -53,7 +53,7 @@ STL（Standard Template Library），即标准模板库，是一个具有工业�
 |erase        | 删除指针指向的数据项
 |clear        |  清空当前的vector
 |rbegin     |   将vector反转后的开始指针返回(其实就是原来的end-1)
-|rend        |  将vector反转构的结束指针返回(其实就是原来的begin-1)
+|rend        |  将vector反转后的结束指针返回(其实就是原来的begin-1)
 |empty    |    判断vector是否为空
 |swap     |    与另一个vector交换数据
 
@@ -81,7 +81,7 @@ vector<int> v;
  for (int i = 1; i <= 1000; ++i)
     v.push_back(i);
  ```
- 在大多数STL实现中，这段代码在循环过程中将会导致2到10次重新分配。（10这个数没什么奇怪的。记住vector在重新分配发生时一般把容量翻倍，而1000约等于210。）
+ 在大多数STL实现中，这段代码在循环过程中将会导致2到10次重新分配。（10这个数没什么奇怪的。记住vector在重新分配发生时一般把容量翻倍，而1000约等于2^10。）
 把代码改为使用reserve，我们得到这个：
 ```cpp
 vector<int> v;
@@ -534,15 +534,15 @@ Map的元素是成对的键值/实值，内部的元素依据其值自动排序�
 ```cpp
 pair<T1,T2> p1;           // 创建一个pair对象，两个元素的类型分别是T1,T2类型，采用初值进行初始化
 pair<T1,T2> p1(v1,v2);        //创建一个pair对象，两个元素的类型分别是T1,T2类型，采用v1,v2分别进行初始化
-make_pair(v1,v2);        // 以v1、v2的只进创建一个pair对象，类型分别是v1、v2的类型
-p.first                            // 返回p中第一个公有数据成员
+make_pair(v1,v2);        // 以v1、v2的值创建一个pair对象，类型分别是v1、v2的类型
+p.first                       // 返回p中第一个公有数据成员
 p.second                     // 返回p中第二个公有数据成员
 ```
 2. pair使用：
 ```cpp
 #include<utility>
 pair<string,int> author("Peter",30);
-cout<<author.first<<"\t"<<author.second<<endl;           //可以直接访问数据成员
+cout<<author.first<<"\t"<<author.second<<endl;//可以直接访问数据成员
 
 //使用typedef进行简化
 typedef pair<string,string> Student;
@@ -563,14 +563,14 @@ map就是一个容器，里面装的就是若干个pair。每个pair的第一个
 - map 初始化：
     ```cpp
     map<k,v>   m1             // 创建一个名m1的空的map对形象，对其键和值的类型分别为k、v
-    map<k, v>  m(m2)        // 创建m2的副本m,m与m2的类型必须相同的键值类型和值类型
+    map<k,v>  m(m2)        // 创建m2的副本m,m与m2的类型必须相同的键值类型和值类型
     map<k,v>   m(b,e)        // 创建map类型的对象m，存储迭代器b和e标记范围内所有元素的副本，元素的类型必须转换为pair<const k, v>
     ```
   map定义的类型：
     ```cpp
-            map<K,V>::key_type            //在map中用做索引的键的类型
-            map<K,V>::mapped_type    //在map中键所关联的值的类型
-            map<K,V>::value_type        //一个pair类型，它的first元素具有const map<K,V>::key::type 类型，而second元素则为map<K,V>::mapped_type类型
+            map<K,V>::key_type      //在map中用做索引的键的类型
+            map<K,V>::value_type    //在map中键所关联的值的类型
+            map<K,V>::mapped_type  //一个pair类型，它的first元素具有const map<K,V>::key::type 类型，而second元素则为map<K,V>::mapped_type类型
     ```
    map迭代器进行解引用将产生pair类型的对象，如：
    ```cpp
