@@ -3,6 +3,10 @@
   clear : both;
   position: relative;
   overflow: visible;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
+  .rounded(@border-radius)
 }
 
 #ds-thread #ds-reset {
@@ -41,19 +45,20 @@
 
   /* Meta */
   .ds-meta {
-    position : relative;
+    position: relative;
+    margin-bottom: 15px;
     padding: 8px 0;
     line-height: 24px;
-    border-bottom: @border-shadow;
   }
 
   .ds-like-tooltip {
     position: absolute;
     z-index: 9999;
+    margin-left: 20px;
     padding: 8px 14px;
-    border: @border-gray;
     background: #fff;
     font-size: @font-size-small;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
 
     ul {
       width:84px;
@@ -75,10 +80,10 @@
   a.ds-like-thread-button {
     color: @gray;
     padding: 4px 8px;
-    border: @border-gray;
     margin-right:15px;
 
     .icon-heart {
+      font-size: 18px;
       color: @link-color;
       opacity: .6;
     }
@@ -122,10 +127,8 @@
 
   /* Toolbar */
   .ds-toolbar {
-    position: relative;
-    z-index: 5;
     font-size: @font-size-small;
-    padding: 8px 0;
+    padding: 8px 0 8px 45px;
     width: 100%;
     clear: both;
 
@@ -134,18 +137,20 @@
     }
   }
   .ds-visitor {
-    float:right;
     line-height:1.5em;
     margin-right:6px;
   }
+  .ds-visitor-name {
+      font-size: @font-size-large
+  }
   .ds-account-control {
-    float:right;
     position:relative;
+    z-index: 5;
+    float: right;
     font-size: @font-size-small;
     cursor: pointer;
     text-align: right;
     line-height: 18px;
-    padding-bottom: 3px;
     width: 75px;
     span {
       display:block;
@@ -155,16 +160,16 @@
     ul {
       display: none;
       position: absolute;
-      top: 19px;
+      top: 16px;
       left: 0px;
-      border: @border-gray;
+      text-align: center;
       background: #fff;
       border-radius: @border-radius;
-      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       li {
         a {
           border-top: 1px solid #fff;
-          border-bottom: 1px solid #ddd;
+          border-bottom: @border-gray;
           display: block;
           padding: 3px 10px;
           color: @gray-lighter;
@@ -198,7 +203,8 @@
   .ds-login-buttons {
     width: 100%;
     position: relative;
-    padding: 10px 0 6px;
+    padding: 10px 0 56px;
+    text-align: right;
     p {
       float: left;
       line-height: 24px;
@@ -207,7 +213,6 @@
     .ds-service-list li {
       float: left;
       height: 16px;
-      width: 54px;
       padding:4px 0;
       margin: 0 0 0 6px;  //  for compatible
     }
@@ -224,7 +229,6 @@
     }
     .ds-social-links{
       float:left;
-      width:306px;  // ie6 有3px margin的bug
     }
 
     &:after {
@@ -254,41 +258,46 @@
     position: relative;
     z-index: 3;
     margin: 8px 0;
-    padding: 0 0 0 60px;
     position:relative;
     &:after {
       .clearfix();
+    }
+    .ds-avatar {
+        top: -45px;
     }
   }
 
   .ds-inline-replybox {
     margin: 8px 0 2px 0;
-    padding-left: 45px;
+    padding-left: 38px;
+    .ds-avatar {
+        top: 0
+    }
     .ds-avatar img{
       width: @avatar-small-size;
       height: @avatar-small-size;
-      box-shadow: 0 1px 2px rgba(0,0,0,.22);
     }
   }
 
   .ds-textarea-wrapper {
-    position: relative;
-    border: @border-gray;
-    border-bottom: none;
-    background: #fff;
-    .arrow-left(#fff);
+
     textarea {
-      box-shadow: none;
       -webkit-appearance: none; //remove inner shadow on mobile webkit
       overflow: auto;
-      padding: 10px;
-      height: 54px;
+      padding: 8px 4px;
+      height: 38px;
       margin: 0;
       resize: none;
       color: @gray-lighter;
       width: 100%;
+      border: none;
+      border-bottom: @border-gray;
+      background: transparent;
+      .transition(.2s);
       &:focus {
+        height: 56px;
         color: @gray-dark;
+        border-bottom: 2px solid @brand-primary
       }
     }
     .ds-hidden-text{
@@ -298,20 +307,20 @@
       top: 0;
       left:10px;
       right:10px;
+      border: none;
     }
     textarea, .ds-hidden-text {
       display: block;
       font-family: @font-family-sans-serif;
       font-size: @font-size-base;
       line-height: 20px;
-      border: none;
     }
   }
   .ds-post-toolbar {
     position: relative;
     width: 100%;
-    overflow: hidden;
-    border-radius: 0 0 @border-radius @border-radius;
+    margin-top: 8px;
+
     span, input, label, a {
       vertical-align: middle;
       width:auto;
@@ -321,18 +330,16 @@
     position: relative;
     margin-right: 100px;
     height: 30px;
-    border: @border-gray;
-    border-right: none;
   }
   .ds-toolbar-buttons {
     position: absolute;
     top: 5px;
-    left: 6px;
+    left: 0;
   }
   .ds-toolbar-button {
     display: inline-block;
     margin-right:4px;
-    font-size: 16px;
+    font-size: 18px;
     color: @text-color;
     opacity: 0.6;
     cursor: pointer;
@@ -364,30 +371,28 @@
     right: 0;
     top: 0;
     height: 100%;
-    width: 100px;
+    padding: 0 1.5em;
     text-align: center;
-    color: #fff;
-    font-size: @font-size-large;
+    color: @gray-light;
+    font-size: @font-size-base;
     border: none;
-    background: @brand-primary;
-    border-bottom-right-radius: @border-radius;
+    background: @gray-background;
+    border-radius: @border-radius;
     .transition(all);
-    box-shadow: inset 0 0 1px #fff;
+
     &:hover {
-      background: darken(@brand-primary, 10%)
+      background: darken(@gray-background, 10%);
     }
     &:active {
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
   }
 
   .ds-comments-info {
-    width: 100%;
-    font-size: @font-size-base;
-    margin-top : 10px;
-    padding: 8px 0;
-    line-height: 25px;
     position:relative;
+    width: 100%;
+    font-size: @font-size-large;
+    margin: 30px 0;
   }
 
   .ds-sort {
@@ -397,41 +402,41 @@
 
     a {
       color: @text-muted;
-      padding: 0 4px; //  padding更大可以扩大可点击区域
-      margin: 0 2px;  //  仍然保留一点间隙，以免被误点
+      padding: 4px 1em;
       cursor: pointer;
       &:hover {
         color: @link-hover-color;
+        text-decoration: none
       }
 
       &.ds-current {
         color: @link-color;
+        border-bottom: 2px solid @link-color;
       }
     }
   }
 
   ul.ds-comments-tabs {
     .ds-highlight {
-      margin: 0 2px 0 0;
+      margin: 0 .2em 0 0;
+      font-size: 130%;
     }
-    .ds-service-icon{
+    .ds-service-icon {
       vertical-align: middle;
       margin: 0 2px 1px 0;
     }
   }
 
   li.ds-tab {
-    display: inline;
-    font-size: @font-size-large;
+    display: inline-block;
+    font-size: 20px;
     margin: 0 5px 0 0;
     padding: 0;    //  for compatible
     a {
       padding: 3px 10px;
-      .rounded(@border-radius);
+
       &.ds-current {
         color: @gray-lighter;
-        border: @border-gray;
-        background-color: #fff;
       }
       &:hover {
         background-color: rgba(0,0,0,.04);
@@ -445,8 +450,6 @@
     &:after {
       .clearfix();
     }
-    border-top: 2px solid @gray-lightest;
-    border-bottom: 2px solid @gray-lightest
   }
 
   li.ds-post {
@@ -465,7 +468,7 @@
 
   .ds-post-self {
     position: relative;
-    padding-left: 60px;
+    padding-left: 48px;
     &:after {
       .clearfix();
     }
@@ -484,11 +487,8 @@
 
   .ds-comment-body {
     position: relative;
-    padding: 0 15px 6px;
-    background: #fff;
-    border: @border-gray;
-    border-radius: 3px;
-    .arrow-left();
+    padding: 0 0 6px;
+
     p {
       font-size: @font-size-base;
       line-height: 1.5em;
@@ -519,13 +519,13 @@
 
   #ds-bubble {
     position: absolute;
-    background-color: #fff;
-    .rounded(@border-radius);
+    z-index: 9999;
     padding: 10px;
     color: #333;
-    border: @border-gray;
-    z-index: 9999;
+    background-color: #fff;
     font-size: @font-size-base;
+    .rounded(@border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     p {
       line-height: 18px;
     }
@@ -573,7 +573,7 @@
       overflow:hidden;
       white-space:nowrap;
       text-overflow:ellipsis;
-      font-size:@font-size-large;
+      font-size:@font-size-base;
     }
     .ds-user-card-meta {
       margin:14px 0 0 0;
@@ -594,9 +594,6 @@
   .ds-comment-header {
     margin: 0 -15px;
     padding: 10px 15px;
-    background: @gray-background;
-    border-bottom: @border-gray;
-    border-radius: 3px 3px 0 0;
   }
 
   .ds-comment-footer {
@@ -616,7 +613,7 @@
 
   .ds-user-name {
     color: @gray-light;
-    font-size: @font-size-base;
+    font-size: @font-size-large;
     margin-right: 8px;
   }
 
@@ -693,7 +690,8 @@
   .ds-powered-by {
     font-size: @font-size-small;
     text-align: right;
-    padding: 10px 0;
+    padding: 10px 0 0;
+    border-top: 2px solid @gray-lightest;
     a {
       color: @text-muted;
       text-decoration: none;  //  compatible
@@ -708,88 +706,85 @@
 }
 
 
-#ds-thread.ds-narrow #ds-reset{
+#ds-thread.ds-narrow {
+  padding: 20px 16px;
+  border-radius: 0;
 
-  .ds-avatar img {
-    width: @avatar-small-size;
-    height: @avatar-small-size;
-  }
-  .ds-post-button {
-    width: 70px;
-  }
-  .ds-post-options {
-    margin-right:70px;
-  }
-  .ds-post-self,
-  .ds-replybox {
-      padding-left: 45px
+  #ds-reset{
+    .ds-avatar img {
+      width: @avatar-small-size;
+      height: @avatar-small-size;
+    }
+    .ds-post-self {
+        padding-left: 38px
+    }
   }
 }
 
 #ds-smilies-tooltip {
-  position: absolute;
-  width: 400px;
-  background-color: #FFF;
-  z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2);
-  text-shadow: @text-shadow;
-  .rounded(@border-radius);
-
-  a {
-    cursor:pointer;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin:0;
-  }
-  ul.ds-smilies-tabs {
-    width:119px;
     position: absolute;
-    top: 0;
-    left: 0;
-    height:100%;
-    overflow-y:auto;
-    background: @gray-background;
-    border-right: @border-gray;
-    border-top-left-radius: @border-radius;
-    border-bottom-left-radius: @border-radius;
-    li {
-      a {
-        color: @gray-lighter;
-        padding: 6px 10px;
-        display: block;
-        border-bottom: @border-gray;
-        font-size: @font-size-small;
-        line-height: 1.3em;
-      }
-      &:first-child a {
-        border-top-left-radius: @border-radius;
-      }
-      a.ds-current {
-        color: #666;
-        background: #e3e3e3;
-        box-shadow: inset 0 0 4px rgba(0,0,0,.1);
-      }
-    }
-  }
-  .ds-smilies-container{
-    padding: 10px 5px;
-    height:140px;
-    margin-left: 125px;
-    overflow-y:auto;
-    li {
-      list-style: none;
-      float:left;
-      width: 26px;
-      height: 26px;
-      text-align:center;
-      cursor:pointer;
+    width: 400px;
+    background-color: #FFF;
+    z-index: 9999;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    text-shadow: @text-shadow;
+    .rounded(@border-radius);
 
-      &:hover {
-        position: relative;
-        top: -1px;
-      }
+    a {
+        cursor:pointer;
     }
-  }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin:0;
+    }
+    ul.ds-smilies-tabs {
+        width:119px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height:100%;
+        overflow-y:auto;
+        background: @gray-background;
+        border-right: @border-gray;
+        border-top-left-radius: @border-radius;
+        border-bottom-left-radius: @border-radius;
+        li {
+            a {
+                color: @gray-lighter;
+                padding: 6px 10px;
+                display: block;
+                border-bottom: @border-gray;
+                font-size: @font-size-small;
+                line-height: 1.3em;
+            }
+            &:first-child a {
+                border-top-left-radius: @border-radius;
+            }
+            a.ds-current {
+                color: #666;
+                background: #e3e3e3;
+                box-shadow: inset 0 0 4px rgba(0,0,0,.1);
+            }
+        }
+    }
+    .ds-smilies-container{
+        padding: 10px 5px;
+        height:140px;
+        margin-left: 125px;
+        overflow-y:auto;
+        li {
+            list-style: none;
+            float:left;
+            width: 26px;
+            height: 26px;
+            text-align:center;
+            cursor:pointer;
+
+            &:hover {
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
 }

@@ -287,8 +287,11 @@
 
     h1,
     h2,
-    h3 {
-        padding-top: 24px;
+    h3,
+    h4,
+    h5 {
+        padding-top: @headerH;
+        margin-top: @headerH * -1;
     }
 
     h1,
@@ -456,6 +459,11 @@
     }
 }
 
+
+.comments {
+    padding: 40px 0 0;
+}
+
 @media screen and (max-width:760px) {
     .post-widget {
         display: none
@@ -511,6 +519,11 @@
         overflow-x: auto;
         overflow-y: hidden;
     }
+
+    .comments {
+        margin-left: -16px;
+        margin-right: -16px
+    }
 }
 
 @media screen and (max-width:480px) {
@@ -531,6 +544,3 @@
     }
 }
 
-.comments {
-    padding: 60px 0 0;
-}
