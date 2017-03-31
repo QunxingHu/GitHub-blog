@@ -62,7 +62,7 @@ show_last_updated: true
 share: true
 
 # 是否开启打赏，关闭 reward: false
-reward: false
+reward: 
   title: 谢谢~
   wechat: false    #微信，关闭设为 false
   alipay: false     #支付宝，关闭设为 false
@@ -113,7 +113,7 @@ uyan_uid: false
 # 让搜索引擎重定向你的不同域名、不同子域、同域不同目录的站点到你期望的路径
 # https://support.google.com/webmasters/answer/139066
 # 假设配置为 canonical: http://imys.net，那么从搜索引擎中 www.imys.net 进入会重定向到 imys.net
-canonical: false
+canonical: http://huqunxing.site
 
 # 版权起始年份
 since_year: 2016
@@ -128,8 +128,8 @@ visit_counter:
 
 # 动态定义title
 title_change:
-  normal: (つェ⊂)咦!又好了!
-  leave: 死鬼去哪里了！
+  normal: 我看到你了
+  leave: 你看不见我，看不见我！
 
 # 设置为 true 发布后将使用 unpkg cdn
 cdn: true
